@@ -1,5 +1,5 @@
 // Name: Tim Zhang
-// Date last modified: Sun 24 Nov 17:03:20 AEDT 2019
+// Date last modified: Wed 18 Dec 15:06:30 AEDT 2019
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,7 +16,7 @@
 #include <stdbool.h>
 
 #define MAX_LINE_CHARS 1024 
-#define INTERACTIVE_PROMPT "cowrie> "
+#define INTERACTIVE_PROMPT "nautilus> "
 #define DEFAULT_PATH "/bin:/usr/bin"
 #define WORD_SEPARATORS " \t\r\n"
 #define DEFAULT_HISTORY_SHOWN 10
@@ -81,20 +81,20 @@ static void pwd(void);
 
 // ===== Subset 2 - History utilities ===== 
 
-// Opens $HOME/.cowrie_history in a given a mode, eg. "r", "w", etc. and 
+// Opens $HOME/.nautilus_history in a given a mode, eg. "r", "w", etc. and 
 // returns the FILE *
 static FILE *openHistory(char *mode);  
 
-// Returns the number of lines in $HOME/.cowrie_history
+// Returns the number of lines in $HOME/.nautilus_history
 static int getHistoryLineCount(void); 
 
-// Prints the latest n entries in $HOME/.cowrie_history 
+// Prints the latest n entries in $HOME/.nautilus_history 
 static void printLatestHistory(int n); 
 
-// Appends the given command to $HOME/.cowrie_history
+// Appends the given command to $HOME/.nautilus_history
 static void writeHistory(char **words);  
 
-// Fetches the string corresponding to lineNumber in $HOME/.cowrie_history
+// Fetches the string corresponding to lineNumber in $HOME/.nautilus_history
 static char *getCommandFromHistory(int lineNumber); 
 
 // Called if ! or !n was typed. Retrieves the right command from history and 
@@ -448,7 +448,7 @@ static void pwd(void) {
 
 static FILE *openHistory(char *mode) {
     char *home = getenv("HOME");
-    char historyFilename[] = ".cowrie_history";
+    char historyFilename[] = ".nautilus_history";
     // + 1 for '/' and + 1 for '\0'
     char *fullPath = malloc(sizeof(char) * (strlen(home) + strlen(historyFilename) + 1 + 1));  
     strcpy(fullPath, home);
