@@ -1,4 +1,3 @@
-// Name: Tim Zhang
 // Date last modified: Wed 18 Dec 15:06:30 AEDT 2019
 
 #include <stdio.h>
